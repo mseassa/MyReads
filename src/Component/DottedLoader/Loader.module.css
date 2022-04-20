@@ -1,0 +1,44 @@
+.dottedLoader {
+    width: 100px;
+    height: 100px;
+    border-width: 4px;
+    color: red;
+    border-style: solid solid dotted dotted;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50Px;
+    margin-left: -50px;
+    animation: rotate-right 2s linear infinite;
+}
+.dottedLoader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-width: 4px;
+    color: rgb(146, 171, 207);
+    border-style: solid dotted;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: rotate-left 1s linear infinite;
+}
+@keyframes rotate-right {
+    from {
+        transform: rotate(0);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate-left {
+    from {
+        transform: rotate(360deg);
+    } to {
+        transform: rotate(0);
+    }
+}
